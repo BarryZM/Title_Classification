@@ -118,8 +118,7 @@ class train_vector:  # 训练集数据设置
             dic_this_key = {}
             for word in dic_this_key:
                 dic_this_key[word] = dic_all[word]
-            dic_out[key_topic] = dic_all
-
+            dic_ouyt[key_topic] = dic_all
         return dic_out
 
     def train_dic_build(self):
@@ -258,7 +257,7 @@ class Title_classifier():
         return 0.5 * cos + 0.5 if norm else cos  # 归一化到[0, 1]区间内
 
     def vector_nor1(self, vector_input):
-        factor = np.sqrt(sum(float(val) * 2 for val in vector_input))
+        factor = np.sqrt(sum(float(val) ^ 2 for val in vector_input))
         if factor != 0:
             vector = [float(value) / factor for value in vector_input]
         else:
@@ -631,3 +630,21 @@ a2 = Title_classifier(train_dir, tpoic_good)
 # 	print(a)
 # end = time.process_time()
 # print(end-start)
+
+topic_dic = {
+            '1': 1,
+            '2': 77,
+            '3': 32,
+            '4': 15,
+            '5': 75,
+            '6': 76,
+            '7':42,
+            '8': 25,
+            '9': 66,
+            '10': 72,
+            '11': 91,
+            '12': 5,
+            '13': 4,
+            '14': 8,
+            '15': 3
+        }
